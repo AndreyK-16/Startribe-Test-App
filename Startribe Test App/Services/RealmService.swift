@@ -34,7 +34,6 @@ class RealmService {
                     if let existing = realm.object(ofType: NewsItem.self, forPrimaryKey: item.id) {
                         // Update existing item but preserve isRead status
                         let wasRead = existing.isRead
-                        realm.delete(existing)
                         item.isRead = wasRead
                     }
                     realm.add(item, update: .modified)
@@ -45,14 +44,21 @@ class RealmService {
         }
     }
     
-    func markAsRead(_ item: NewsItem) {
+    func markAsRead(id: String) {
         do {
             try realm.write {
-                item.isRead = true
+                if let obj = realm.object(ofType: NewsItem.self, forPrimaryKey: id), !obj.isInvalidated {
+                    obj.isRead = true
+                }
             }
         } catch {
             print("Error marking item as read: \(error)")
         }
+    }
+
+    func markAsRead(_ item: NewsItem) {
+        if item.isInvalidated { return }
+        markAsRead(id: item.id)
     }
     
     func deleteAllNews() {
