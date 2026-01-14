@@ -11,7 +11,7 @@ import SwiftUI
 struct Startribe_Test_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
