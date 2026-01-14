@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B65D16F72F16E5F200C03028 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B65D16F62F16E5F200C03028 /* RealmSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B65D16B62F16DC3400C03028 /* Startribe Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Startribe Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B65D16F72F16E5F200C03028 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = "Startribe Test App";
 			packageProductDependencies = (
+				B65D16F62F16E5F200C03028 /* RealmSwift */,
 			);
 			productName = "Startribe Test App";
 			productReference = B65D16B62F16DC3400C03028 /* Startribe Test App.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = B65D16AD2F16DC3400C03028;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B65D16F32F16E5F200C03028 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B65D16B72F16DC3400C03028 /* Products */;
 			projectDirPath = "";
@@ -336,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B65D16F32F16E5F200C03028 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B65D16F62F16E5F200C03028 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B65D16F32F16E5F200C03028 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B65D16AE2F16DC3400C03028 /* Project object */;
 }
